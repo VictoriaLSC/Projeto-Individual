@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&family=Tuffy:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    background-color: #f8f8f8;
+    color: #555;
+}
+
+.primeira-sessao{
+    background-color: #a78b94;
+    margin: 0;
+    padding: 20px;
+ 
+}
+
+h1 {
+    font-family: "Tuffy", sans-serif;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-family: "Tuffy", sans-serif;
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    list-style: none;
+    margin-left: 1.5rem;
+}
+
+.menu a {
+    color: #a78b94;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+
+}
+
+.menu a:hover {
+    color: #a78b94;
+}
+
+
+
+main {
+    margin-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+.principal {
+    background-color: #f8f8f8;
+}
+
+
+
+.begin {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 3rem;
+}
+
+.begin-subtitulo {
+    font-size: 1.2rem;
+}
+
+
+.begin-imagens-container {
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 1rem; 
+  margin-top: 1rem;
+}
+
+.begin-imagens-container figure {
+  margin: 0;
+  flex: 1 0 150px; 
+}
+
+.begin-imagens-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.begin-imagens-container img:hover {
+  transform: scale(1.05);
+}
+
+
+
+.home {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.sobre-mim {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.sobre-mim img {
+    max-width: 40%;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-mim-texto {
+    flex: 1;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.timeline {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.line img {
+    max-width: 80%;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.line p {
+    max-width: 800px;
+    text-align: center;
+}
+
+.cards-timeline {
+    display: flex;
+    flex-direction: row;   
+}
+
+.card-individual{
+    display: flex;
+    flex-direction: column;
+    background-color:#a78b94;
+    margin: 10px;
+    width: 350px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    align-items:flex-start;
+    gap: 10px;
+}
+
+.card-individual-conteudo{
+display: flex;
+text-align: start;
+flex-direction: column;
+padding: 10px;
+gap: 50px;
+}
+
+.card-individual img {
+    width: 100%;
+}
+
+
+
+
+/*Cadastro */
+
+.cadastro-container {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cadastro-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.cadastro-descricao {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #777;
+}
+
+.cadastro-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-campo {
+    margin-bottom: 1rem;
+}
+
+.form-campo label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-campo input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+.form-botao {
+    background-color: #a78b94;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.form-botao:hover {
+    background-color: #8c6d77;
+}
+
+
+
+
+
+/* Login */
+
+.login-container {
+    max-width: 400px;
+    margin: 7rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px #0000001a;
+}
+
+.login-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.login-descricao {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #777;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-box {
+    margin-bottom: 1rem;
+}
+
+.input-box label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.7rem;
+    font-size: 1rem;
+}
+
+.login-botao {
+    background-color: #a78b94;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.login-botao :hover {
+    background-color: #8c6d77;
+}
+
+.register-link {
+    color: #a78b94;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.register-link a {
+    color: #a78b94;
+    
+}
+
+
+/* Rodapé */
+footer {
+    background-color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-info {
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-links a {
+    color: #555;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}

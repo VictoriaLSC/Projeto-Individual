@@ -1,0 +1,720 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color:#fff0f5;
+    color: #333;
+    font-family: "Helvetica Neue"
+ 
+}
+
+html{
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+}
+
+a{
+    text-decoration: none;
+
+}
+.home img {
+    height: 500px;
+}
+
+h2{
+   font-weight: 500;
+   font-size: 32px; 
+   
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.sobre-mim-texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline img{
+    height: 500px;
+}
+
+ul{
+    list-style: none;
+}
+
+
+nav{
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3c3c3c;
+    margin-bottom: 15px;
+    border-bottom: 2px solid pink;
+
+}
+
+.logo{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    width: 380px;
+    align-items: center;
+    font-weight: 600;
+    font-family: Teko;
+    font-size: 32px;
+    text-transform: uppercase; /* transformar em maiúscula */
+    
+/* }
+
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+    gap: 24px; /* separação entre os itens do menu*/
+    /* color: #990033; */
+/* 
+}
+.login{
+    color: #990033;
+} */
+
+/* main{
+    display: flex;
+    flex-direction: column;
+
+} */
+/*  */
+
+/* casdastro */
+
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh ;
+    background-color:#fff0f5;
+    background-position: center;
+    background-size: cover;
+
+} */
+/* nav{
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3c3c3c;
+    margin-bottom: 15px;
+    border-bottom: 2px solid pink;
+
+} */
+
+
+/* .logo{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    width: 380px;
+    align-items: center;
+    font-weight: 600;
+    font-family: Teko;
+    font-size: 32px;
+    text-transform: uppercase; /* transformar em maiúscula */
+    
+ 
+/* .logo img{
+    width: 40px;
+    border-radius: 50%;
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+    gap: 24px; /* separação entre os itens do menu*/
+/*}color: #990033;*/
+
+/*
+.caixa-forms{
+    width: 420px;
+    background-color: transparent;
+    border:2px solid rgba(255, 255, 255, .2);
+    border-radius: 10px;
+    color: #990033;
+    padding: 30px 40px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    backdrop-filter: blur(30px);
+}
+
+.container-log h1{
+    font-size: 36px;
+    text-align: center;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border:2px solid;
+    border-color: #990033;
+    border-radius: 40px;
+    outline: none;
+    font-size: 16px;
+    color: #990033;
+    padding: 20px 45px 20px 20px;
+}
+
+
+.input-box input::placeholder{
+    color: #c5c5c5;
+
+}
+.remember{
+    display: flex;
+    justify-content: space-between;
+    margin: -15px 0 15px;
+}
+
+
+
+.login{
+    width: 100%;
+    height: 40px;
+    background-color: #fcdecc;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    box-shadow: 0 0 10px rgba(255, 255, 255, .2);
+}
+
+.login:hover {
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+ 
+}
+
+.register-link{
+    font-size: 14px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+.register-link a{
+    text-decoration: none;
+    color:  #990033;
+    font-weight: 600px;
+}
+.register-link a:hover{
+   text-decoration: underline; 
+}
+
+.container-log{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh ;
+    background-color:#fff0f5;
+    border: 2px solid black;
+    
+    
+}
+
+footer{
+    padding: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background-color: #3c3c3c;
+} 
+*/
+
+
+/* <main class="container-login">
+        <form>
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="email" placeholder=" Usuário">
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Senha">
+            </div>
+
+
+            
+
+            <button class="login" type="submit">Login</button>
+
+            <div class="register-link">
+                <p> Não possui cadastro? <a href="cadastro.html">Cadastre-se</a></p>
+            </div>
+
+        </form>
+
+
+    </main> */
+
+    /* teste */
+/* Estilos Gerais */
+/* body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo span {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #a78b94;
+}
+
+/* Estilos do Conteúdo Principal */
+/* .container-log {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.caixa-forms {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    margin-bottom: 20px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button.login {
+    background-color: #a78b94;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button.login:hover {
+    background-color: #8c6d77;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.register-link a {
+    color: #a78b94;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+} */
+
+/* Estilos do Rodapé */
+/* footer {
+    background-color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-info {
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-links a {
+    color: #555;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}  */
+
+
+/* Reset de Estilos (Opcional, mas Recomendado) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos Globais  */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    background-color: #f8f8f8; /* Cinza claro para o fundo geral  */
+    color: #555; /* Cinza escuro para o texto geral  */
+}
+
+html {
+    font-size: 16px; /* Tamanho base da fonte  */
+    line-height: 1.6; /* Espaçamento entre linhas  */
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /* Herdar a cor do texto pai  */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Cabeçalho  */
+header {
+    background-color: #fff; /* Branco para o cabeçalho  */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; /* Garantir que fique acima do conteúdo  */
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif; /* Fonte elegante para o logo  */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    margin-left: 1.5rem;
+}
+
+.menu a {
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #a78b94; /* Rosa antigo no hover  */
+}
+
+/* Página Inicial - Estilos Específicos  */
+main {
+    margin-top: 4rem; /* Espaço para o cabeçalho fixo  */
+    padding-bottom: 2rem;
+}
+
+.principal {
+    background-color: #f8f8f8;
+}
+
+.begin {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.begin h1 {
+    font-family: 'Playfair Display', serif; /* Fonte elegante para o título  */
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.begin hr {
+    border-color: #a78b94; /* Rosa antigo para a linha  */
+    margin-bottom: 1rem;
+}
+
+.begin-subtitulo {
+    font-size: 1.2rem;
+}
+
+.begin-imagens-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.5rem;
+}
+
+.begin-imagens-container img {
+    width: 100%;
+    display: block;
+    border-radius: 0.5rem;
+}
+
+.home {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.home h2,
+.timeline h1,
+.timeline h2 {
+    font-family: 'Playfair Display', serif; /* Fonte elegante para os títulos  */
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.sobre-mim {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.sobre-mim img {
+    max-width: 40%;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-mim-texto {
+    flex: 1;
+    background-color: #fff; /* Branco para o texto sobre mim  */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.timeline {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.line img {
+    max-width: 80%;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.line p {
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Página de Login - Estilos Específicos  */
+.container-log {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.caixa-forms {
+    background-color: #fff; /* Branco para o formulário  */
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.caixa-forms h1 {
+    font-family: 'Playfair Display', serif; /* Fonte elegante para o título  */
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.input-box {
+    margin-bottom: 1.5rem;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+}
+
+.login {
+    background-color: #a78b94; /* Rosa antigo para o botão  */
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.login:hover {
+    background-color: #8c6d77; /* Tom mais escuro no hover  */
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.register-link a {
+    color: #a78b94; /* Rosa antigo para o link  */
+    font-weight: bold;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Rodapé  */
+footer {
+    background-color: #fff; /* Branco para o rodapé  */
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-info {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links {
+    margin-top: 0.5rem;
+}
+
+.footer-links ul {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-links li {
+    margin: 0 1rem;
+}
+
+.footer-links a {
+    color: #555; /* Cinza escuro para os links do rodapé  */
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
