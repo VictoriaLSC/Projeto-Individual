@@ -13,7 +13,7 @@
         <nav>
             <div class="logo">
 
-                <span>Sem roteiro: Maternidade </span>
+                <span> Maternidade Real </span>
             </div>
             <ul class="menu">
                 <li><a href="index.html">Home</a></li>
@@ -61,7 +61,7 @@
     <footer>
         <div class="container3">
             <div class="footer-info">
-                <p>© 2025 Sem Roteiro: Maternidade. Todos os direitos reservados.</p>
+                <p>© 2025 Maternidade Real</p>
                 <p>Feito com muito ❤️</p>
             </div>
             <div class="footer-links">
@@ -88,7 +88,7 @@
         var senhaVar = senha.value
         var confirmSenhaVar = confirmacao_senha.value
 
-        // Verificando se há algum campo em branco
+    
         if (
             nomeVar == "" ||
             emailVar == "" ||
@@ -96,7 +96,18 @@
             confirmSenhaVar == "" ||
             dataVar == ""
         ) {
-            console.log("Mensagem de erro para todos os campos em branco");
+            alert("Por favor, preencha todos os campos antes de continuar.");
+            return false;
+        
+        } 
+        // validações
+        if (!emailVar.includes("@") || !emailVar.includes(".")) {
+            alert("Informe um e-mail válido.");
+            return false;
+        }
+
+        if (senhaVar.length < 8) {
+            alert("A senha deve conter pelo menos 8 caracteres.");
             return false;
         }
         else {
@@ -139,7 +150,7 @@
         return false;
     }
 
-    // Listando empresas cadastradas 
+    
     function listar() {
         fetch("/empresas/listar", {
             method: "GET",
