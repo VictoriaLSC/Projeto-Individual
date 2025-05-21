@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que tipo de mãe você é?</title>
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+
+
+<body onload="onloadEsconder()">
+    <header>
+        <nav class="logo-container">
+            <div class="logo">
+                <span>Maternidade Real</span>
+            </div>
+            <ul class="menu">
+                <li><a class="home" href="./index.html">Home</a></li>
+
+                <li><a class="login" href="./login.html">Entrar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="principal">
+        <section class="cadastro-container">
+            <h1>Que tipo de mãe você é?</h1>
+
+            <button id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
+
+            <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
+                <!-- <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
+                <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas"></span></span>
+                <span class="width-fit-content">Quantidade de erros: <span id="spanErradas"></span></span>
+            </div> -->
+                <div id="pontuacaoFinalJogo" class="flex-colunar padding-8">
+                    <span id="pontuacaoFinal" class="width-fit-content">Pontuação Final:
+                        <span id="spanPontuacaoFinal">***</span>
+                    </span>
+                    <span id="msgFinal" class="width-fit-content">***</span>
+                </div>
+            </div>
+
+            <div id="jogo" class="width-fit-content flex-colunar border-secondary">
+
+                <div id="infoQuestao" class="padding-8">
+                    <span>Questão atual: <span id="spanNumeroDaQuestaoAtual"></span> de <span id="qtdQuestoes"></span>
+                        questões.</span>
+                </div>
+
+                <div id="perguntaDaQuestaoAtual" class="padding-8">
+                    <span id="spanQuestaoExibida" class="text-bold"></span>
+                </div>
+
+                <div id="infoAlternativas" class="padding-8">
+                    <span><em>Escolha uma opção dentre as abaixo:</em></span>
+                </div>
+
+                <div id="opcoes" class="flex-colunar padding-8">
+                    <span>
+                        <input type="radio" id="primeiraOpcao" name="option" class="radio" value="alternativaA" />
+                        <label for="primeiraOpcao" class="option" id="labelOpcaoUm"></label>
+                    </span>
+                    <span>
+                        <input type="radio" id="segundaOpcao" name="option" class="radio" value="alternativaB" />
+                        <label for="segundaOpcao" class="option" id="labelOpcaoDois"></label>
+                    </span>
+                    <span>
+                        <input type="radio" id="terceiraOpcao" name="option" class="radio" value="alternativaC" />
+                        <label for="terceiraOpcao" class="option" id="labelOpcaoTres"></label>
+                    </span>
+                    <span>
+                        <input type="radio" id="quartaOpcao" name="option" class="radio" value="alternativaD" />
+                        <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
+                    </span>
+                </div>
+
+                <div id="botoes" class="flex-colunar padding-8">
+                    <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
+                    <button onclick="avancar()" id="btnProx" disabled>Avançar para próxima questão</button>
+                    <!-- <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button> -->
+                    <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Tentar novamente</button>
+                </div>
+            </div>
+            </div>
+    </main>
+    </section>
+    <footer>
+        <div class="container3">
+            <div class="footer-container">
+                <div class="footer-info">
+                    <p>© 2025 Maternidade Real.</p>
+                    <p>Feito com muito ❤️</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+<script>
+    if(sessionStorage.EMAIL_USUARIO == ""){
+        window.location = "index.html"
+    }
+
+    let racional = 0;
+    let emocional = 0;
+    let colaborativa = 0;
+    let ansiosa = 0;
+    const listaDeQuestoes = [
+
+        {
+            pergunta: "Quando seu filho cai e se machuca, o que você faz primeiro?",
+            alternativaA: { texto: "Fico nervosa e penso no pior.", tipo: "ansiosa" },
+            alternativaB: { texto: "Abraço e acalmo ele antes de qualquer coisa.", tipo: "emocional" },
+            alternativaC: { texto: "Verifico se ele não teve nada grave e dou orientações.", tipo: "racional" },
+            alternativaD: { texto: "Se ele diz que está bem, deixo ele continuar brincando.", tipo: "colaborativa" }
+
+        },
+        {
+            pergunta: "Como você reage quando seu filho faz birra?",
+            alternativaA: { texto: "Converso com calma.", tipo: "racional" },
+            alternativaB: { texto: "Dou colo e carinho.", tipo: "emocional" },
+            alternativaC: { texto: "Peço ajuda para alguém.", tipo: "colaborativa" },
+            alternativaD: { texto: "Fico muito nervosa.", tipo: "ansiosa" }
+        },
+
+        {
+            pergunta: "Quando seu filho fica doente, você:",
+            alternativaA: { texto: "Segue orientações médicas à risca.", tipo: "racional" },
+            alternativaB: { texto: "Se desespera e chora.", tipo: "ansiosa" },
+            alternativaC: { texto: "Busca apoio com amigos ou família.", tipo: "colaborativa" },
+            alternativaD: { texto: "Fica com ele o tempo todo no colo.", tipo: "emocional" }
+        },
+
+        {
+            pergunta: "Você costuma se sentir...",
+            alternativaA: { texto: "Organizada, com tudo sob controle.", tipo: "racional" },
+            alternativaB: { texto: "Muito conectada ao seu filho emocionalmente.", tipo: "emocional" },
+            alternativaC: { texto: "Sobrecarregada e sozinha.", tipo: "ansiosa" },
+            alternativaD: { texto: "Parte de uma rede de apoio que torna tudo mais leve.", tipo: "colaborativa" }
+        },
+
+        {
+            pergunta: "Seu filho derruba comida no chão logo após você limpar. O que você faz?",
+            alternativaA: { texto: "Pede para ele ajudar a limpar, explicando com calma.", tipo: "racional" },
+            alternativaB: { texto: "Abraça e diz que tudo bem, 'essas coisas acontecem'.", tipo: "emocional" },
+            alternativaC: { texto: "Chama alguém para ajudar a limpar, pois já está exausta.", tipo: "colaborativa" },
+            alternativaD: { texto: "Fica nervosa, suspira fundo e começa a se culpar.", tipo: "ansiosa" }
+        },
+        {
+            pergunta: "Como você lida com a rotina de tarefas da casa e cuidados com o filho?",
+            alternativaA: { texto: "Faz uma lista, separa por horários e segue um cronograma.", tipo: "racional" },
+            alternativaB: { texto: "Vai fazendo conforme sente, priorizando o que acha mais importante no momento.", tipo: "emocional" },
+            alternativaC: { texto: "Divide com quem estiver por perto, sempre pede uma mãozinha.", tipo: "colaborativa" },
+            alternativaD: { texto: "Se perde na bagunça e sente que não dá conta.", tipo: "ansiosa" }
+        },
+        {
+            pergunta: "Quando precisa tomar uma decisão importante sobre seu filho, você…",
+            alternativaA: { texto: "Pesquisa bastante, compara opiniões e escolhe com base lógica.", tipo: "racional" },
+            alternativaB: { texto: "Ouve seu coração e confia no seu instinto.", tipo: "emocional" },
+            alternativaC: { texto: "Consulta amigas, grupos de mães ou familiares antes.", tipo: "colaborativa" },
+            alternativaD: { texto: "Fica insegura, com medo de errar e demora a decidir.", tipo: "ansiosa" }
+        },
+    ]
+
+    // variáveis globais    
+    let numeroDaQuestaoAtual = 0
+    let pontuacaoFinal = 0
+    let tentativaIncorreta = 0
+    let quantidadeDeQuestoes = listaDeQuestoes.length
+    
+
+    function onloadEsconder() {
+        document.getElementById('pontuacao').style.display = "none"
+        document.getElementById('jogo').style.display = "none"
+    }
+
+    function iniciarQuiz() {
+        document.getElementById('pontuacao').style.display = "flex"
+        document.getElementById('jogo').style.display = "flex"
+        document.getElementById('btnIniciarQuiz').style.display = "none"
+
+        document.getElementById('qtdQuestoes').innerHTML = quantidadeDeQuestoes
+
+        preencherHTMLcomQuestaoAtual(0)
+
+        btnSubmeter.disabled = false
+        btnProx.disabled = true
+        // btnConcluir.disabled = true
+        btnTentarNovamente.disabled = true
+    }
+
+    function preencherHTMLcomQuestaoAtual(index) {
+        habilitarAlternativas(true)
+        const questaoAtual = listaDeQuestoes[index]
+        numeroDaQuestaoAtual = index
+        console.log("questaoAtual")
+        console.log(questaoAtual)
+        document.getElementById("spanNumeroDaQuestaoAtual").innerHTML = Number(index) + 1 // ajustando porque o index começa em 0
+        document.getElementById("spanQuestaoExibida").innerHTML = questaoAtual.pergunta;
+
+        document.getElementById("labelOpcaoUm").innerHTML = questaoAtual.alternativaA.texto;
+        document.getElementById("labelOpcaoDois").innerHTML = questaoAtual.alternativaB.texto;
+        document.getElementById("labelOpcaoTres").innerHTML = questaoAtual.alternativaC.texto;
+        document.getElementById("labelOpcaoQuatro").innerHTML = questaoAtual.alternativaD.texto;
+    }
+
+    function submeter() {
+        const options = document.getElementsByName("option"); // recupera alternativas no html
+
+        let hasChecked = false
+        for (let i = 0; i < options.length; i++) {
+            if (options[i].checked) {
+                hasChecked = true
+                break
+            }
+        }
+
+        if (!hasChecked) {
+            alert("Não há alternativas escolhidas. Escolha uma opção.")
+        } else {
+            btnSubmeter.disabled = true
+            btnProx.disabled = false
+
+            habilitarAlternativas(false)
+
+            checarResposta()
+        }
+    }
+
+    function habilitarAlternativas(trueOrFalse) {
+        let opcaoEscolhida = trueOrFalse ? false : true
+
+        primeiraOpcao.disabled = opcaoEscolhida
+        segundaOpcao.disabled = opcaoEscolhida
+        terceiraOpcao.disabled = opcaoEscolhida
+        quartaOpcao.disabled = opcaoEscolhida
+
+    }
+
+    function avancar() {
+        btnProx.disabled = true
+        btnSubmeter.disabled = false
+
+        desmarcarRadioButtons();
+        numeroDaQuestaoAtual++;
+
+        if (numeroDaQuestaoAtual < quantidadeDeQuestoes) {
+            preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual);
+            limparCoresBackgroundOpcoes();
+        } else {
+            finalizarJogo();
+        }
+    }
+
+    function tentarNovamente() {
+        // atualiza a página
+        window.location.reload();
+    }
+
+    function checarResposta() {
+        const questaoAtual = listaDeQuestoes[numeroDaQuestaoAtual] // questão atual 
+
+        const options = document.getElementsByName("option"); // recupera alternativas no html
+
+
+        options.forEach((option) => {
+            if (option.checked) {
+                const alternativa = option.value; // "alternativaB"
+                const tipo = questaoAtual[alternativa].tipo;
+
+                if (tipo === "racional") racional++;
+                else if (tipo === "emocional") emocional++;
+                else if (tipo === "colaborativa") colaborativa++;
+                else if (tipo === "ansiosa") ansiosa++;
+            }
+        });
+
+    }
+
+    function limparCoresBackgroundOpcoes() {
+        const options = document.getElementsByName("option");
+        options.forEach((option) => {
+            document.getElementById(option.labels[0].id).classList.remove("text-danger-with-bg")
+            document.getElementById(option.labels[0].id).classList.remove("text-success-with-bg")
+        })
+    }
+
+    function desmarcarRadioButtons() {
+        const options = document.getElementsByName("option");
+        for (let i = 0; i < options.length; i++) {
+            options[i].checked = false;
+        }
+    }
+
+    function finalizarJogo() {
+        const perfis = [
+            { nome: "Racional", valor: racional },
+            { nome: "Emocional", valor: emocional },
+            { nome: "Colaborativa", valor: colaborativa },
+            { nome: "Ansiosa", valor: ansiosa }
+        ];
+
+        let perfilFinal = "Equilibrada";
+        let maior = -1;
+
+        for (let i = 0; i < perfis.length; i++) {
+            if (perfis[i].valor > maior) {
+                maior = perfis[i].valor;
+                perfilFinal = perfis[i].nome;
+            }
+        }
+        const descricoes = {
+            "Racional": "Você é uma mãe racional! Toma decisões com base em lógica e planejamento. Gosta de organização, clareza e previsibilidade no cuidado com seu filho.",
+            "Emocional": "Você é uma mãe emocional! Conecta-se profundamente com o seu filho e prioriza o afeto. Suas decisões partem do coração, e seu amor é sua bússola.",
+            "Colaborativa": "Você é uma mãe colaborativa! Valoriza trocas, conselhos e acredita que a maternidade é mais leve quando é compartilhada. Você não tem medo de pedir ajuda.",
+            "Ansiosa": "Você é uma mãe ansiosa. Se preocupa com cada detalhe, se cobra muito e muitas vezes sente medo de errar. Mas tudo isso vem do amor profundo que sente.",
+            "Equilibrada": "Você mostra traços de vários perfis e se adapta conforme a situação. Um retrato real da maternidade, com momentos de razão, emoção, apoio e dúvidas."
+        };
+
+        let textoParaMensagemFinal = "Obrigada por participar!<br><br>";
+        textoParaMensagemFinal += "<strong>Seu perfil de mãe é: " + perfilFinal + "</strong><br><br>";
+        textoParaMensagemFinal += descricoes[perfilFinal];
+
+        document.getElementById('msgFinal').innerHTML = `
+             <div class="box-resultado-final">
+        ${textoParaMensagemFinal}
+            </div>`;
+
+        document.getElementById('jogo').classList.add("text-new-gray");
+
+        btnProx.disabled = true;
+        btnSubmeter.disabled = true;
+        // btnConcluir.disabled = true;
+        btnTentarNovamente.disabled = false;
+    }
+
+
+</script>
