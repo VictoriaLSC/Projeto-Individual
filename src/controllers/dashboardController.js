@@ -4,7 +4,7 @@ function contarUsuarios(req, res) {
     dashboardModel.contarUsuarios()
         .then(function (resultado) {
             if (resultado.length > 0) {
-                res.status(200).json(resultado[0]);
+                res.status(200).json(resultado);
             } else {
                 res.status(204).send("Nenhum usuário encontrado!");
             }
@@ -20,7 +20,7 @@ function contarRelatos(req, res) {
     dashboardModel.contarRelatos()
         .then(function (resultado) {
             if (resultado.length > 0) {
-                res.status(200).json(resultado[0]);
+                res.status(200).json(resultado);
             } else {
                 res.status(204).send("Nenhum relato encontrado!");
             }
@@ -31,6 +31,21 @@ function contarRelatos(req, res) {
             res.status(500).json(erro.sqlMessage);
         });
 }
+function perfilMaisComum(req, res) {
+    dashboardModel.perfilMaisComum()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum perfil encontrado!");
+            }
+        })
+        .catch(function (erro) {
+            console.log(erro);
+            console.log("Erro ao buscar perfil por faixa etária: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        });
+    }
 
 function perfilMaisComumPorFaixa(req, res) {
     dashboardModel.perfilMaisComumPorFaixa()
@@ -47,9 +62,25 @@ function perfilMaisComumPorFaixa(req, res) {
             res.status(500).json(erro.sqlMessage);
         });
 }
-
+function quantidadePorPerfil(req, res) {
+    dashboardModel.quantidadePorPerfil()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum perfil encontrado!");
+            }
+        })
+        .catch(function (erro) {
+            console.log(erro);
+            console.log("Erro ao buscar perfil por faixa etária: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        });
+}
 module.exports = {
     contarUsuarios,
     contarRelatos,
-    perfilMaisComumPorFaixa
+    perfilMaisComumPorFaixa,
+    perfilMaisComum,
+    quantidadePorPerfil
 };
