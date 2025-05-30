@@ -20,7 +20,8 @@
                 <li><a> Home</a></li>
 
                 <li><a class="login" href="./login.html">Entrar</a></li>
-                <li><a class="Quizz" href="./interacao.html">Quizz</a></li>
+                <li><a class="Quizz" onClick="verificarLogin()">Quizz</a></li>
+                <!-- quando o usuario loga, armazena a sessionStorage do email e do id dele. Se não tiver nenhuma sessionStorage, significa que o usuário  não tá logado, portanto, não vai pro quiz -->
             </ul>
         </nav>
     </header>
@@ -95,7 +96,8 @@
                             preocupações com os cuidados com o recém-nascido. Foi muito difícil passar por essa
                             experiência porque eu nunca havia ouvido falar. Eu melhorei dessa condição após o pediatra
                             indicar as mamadas de 3 em 3 horas. Isso tornou minha rotina mais previsível, diminuindo o
-                            cansaço e a ansiedade. Dica: Seja sempre sincera com o pediatra e a obstetra, conte tudo o que você está sentindo, pois eles saberão conduzir a situação.
+                            cansaço e a ansiedade. Dica: Seja sempre sincera com o pediatra e a obstetra, conte tudo o
+                            que você está sentindo, pois eles saberão conduzir a situação.
                         </p>
                     </div>
                 </div>
@@ -106,7 +108,12 @@
                     </div>
                     <div class="swiper-slide-conteudo">
                         <h3>Rede de apoio</h3>
-                        <p>Ao longo dessa jornada, percebi como foi essencial ter o apoio da minha família. Cada um, à sua maneira, ofereceu suporte emocional e prático, fazendo uma enorme diferença nos momentos mais desafiadores da maternidade. Seja um conselho, uma ajuda com o Theo ou simplesmente um ombro amigo, saber que podia contar com eles me deu mais força e segurança. Percebi que ter uma rede de apoio não é um luxo, mas sim uma necessidade para uma maternidade mais saudável e equilibrada. Nenhuma mãe deveria passar por isso sozinha</p>
+                        <p>Ao longo dessa jornada, percebi como foi essencial ter o apoio da minha família. Cada um, à
+                            sua maneira, ofereceu suporte emocional e prático, fazendo uma enorme diferença nos momentos
+                            mais desafiadores da maternidade. Seja um conselho, uma ajuda com o Theo ou simplesmente um
+                            ombro amigo, saber que podia contar com eles me deu mais força e segurança. Percebi que ter
+                            uma rede de apoio não é um luxo, mas sim uma necessidade para uma maternidade mais saudável
+                            e equilibrada. Nenhuma mãe deveria passar por isso sozinha</p>
                     </div>
                 </div>
 
@@ -116,7 +123,12 @@
                     </div>
                     <div class="swiper-slide-conteudo">
                         <h3>Casamento</h3>
-                        <p> Já de antemão vou afirmar: o casamento/relacionamento depois dos filhos vai, sim, mudar. É inevitável. As noites mal dormidas, a prioridade absoluta dada ao bebê e o cansaço constante trouxeram novos desafios para a nossa comunicação e intimidade. As discussões se tornam frequentes, o que pode transformar o casamento num pesadelo. É, realmente, uma adaptação delicada e gradativa, deve haver paciência de ambos os lados e o mais importante, resiliência.  
+                        <p> Já de antemão vou afirmar: o casamento/relacionamento depois dos filhos vai, sim, mudar. É
+                            inevitável. As noites mal dormidas, a prioridade absoluta dada ao bebê e o cansaço constante
+                            trouxeram novos desafios para a nossa comunicação e intimidade. As discussões se tornam
+                            frequentes, o que pode transformar o casamento num pesadelo. É, realmente, uma adaptação
+                            delicada e gradativa, deve haver paciência de ambos os lados e o mais importante,
+                            resiliência.
                         </p>
                     </div>
                 </div>
@@ -126,6 +138,13 @@
             <div class="swiper-button-next"></div>
             <div class="swiper-scrollbar"></div>
 
+        </section>
+        <section class="chamada-quiz">
+            <div class="quiz-chamada-container">
+                <h2>Descubra seu estilo de maternidade</h2>
+                <p>Responda algumas perguntas e descubra qual perfil de mãe mais te representa.</p>
+                <a href="interacao.html" class="btn-iniciar-quiz">Fazer o Quiz</a>
+            </div>
         </section>
         <section class="home">
             <div class="sobre-mim">
@@ -152,9 +171,8 @@
                 </div>
                 <div class="footer-links">
                     <ul>
-                        <li><a href="/home">Home</a></li>
-                        <li><a href="/sobre-mim">Sobre Mim</a></li>
-                        <li><a href="/contato">Contato</a></li>
+                        <li>Home</a></li>
+                      
                     </ul>
                 </div>
             </div>
@@ -188,3 +206,13 @@
 </body>
 
 </html>
+
+<script>
+    function verificarLogin(){
+        if(sessionStorage.EMAIL_USUARIO == undefined){
+            window.location = "login.html"
+        } else{
+            window.location = "interacao.html"
+        }
+    }
+</script>

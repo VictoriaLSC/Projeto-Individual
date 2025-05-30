@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Maternidade Real: Login</title>
     <meta name="description" content="Explore o mundo da maternidade real">
     <link rel="stylesheet" href="./css/home.css">
 </head>
@@ -59,9 +59,6 @@
                 <div class="footer-links">
                     <ul>
                         <li><a href="/home">Home</a></li>
-                        <li><a href="/sobre-mim">Sobre Mim</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/contato">Contato</a></li>
                     </ul>
                 </div>
     </footer>
@@ -107,8 +104,9 @@
                     console.log(JSON.stringify(json));
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
                     setTimeout(function () {
-                        window.location = "index.html";
+                        window.location = "dashboard/mural.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

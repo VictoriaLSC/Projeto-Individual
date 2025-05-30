@@ -110,6 +110,7 @@
         window.location = "index.html"
     }
 
+    var perfilFinal = "";
     let racional = 0;
     let emocional = 0;
     let colaborativa = 0;
@@ -311,11 +312,12 @@
 
         let perfilFinal = "Equilibrada";
         let maior = -1;
-
+        var indiceFkPerfil = 0;
         for (let i = 0; i < perfis.length; i++) {
             if (perfis[i].valor > maior) {
                 maior = perfis[i].valor;
                 perfilFinal = perfis[i].nome;
+                indiceFkPerfil = i + 1;
             }
         }
         const descricoes = {
@@ -341,6 +343,32 @@
         btnSubmeter.disabled = true;
         // btnConcluir.disabled = true;
         btnTentarNovamente.disabled = false;
+
+        var id = sessionStorage.ID_USUARIO;
+        console.log(perfilFinal); // mostra qual o perfilFinal
+        console.log(indiceFkPerfil); // 
+
+        fetch("/usarQuiz/quizPerfil", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                tipoPerfil: indiceFkPerfil,
+                idUsuario : id
+            })
+        })
+            .then(res => {
+                if (res.ok) {
+                    console.log("Resultado salvo no banco!");
+                } else {
+                    console.error("Erro ao salvar resultado.");
+                }
+            })
+            .catch(err => {
+                console.error("Erro na requisição:", err);
+            });
+
     }
 
 

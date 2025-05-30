@@ -17,3 +17,12 @@ CREATE TABLE usuarios (
     senha VARCHAR(255) NOT NULL,
     dtRegistro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE resultado_quiz (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    perfil VARCHAR(50),
+    descricao varchar(100),
+    data_resultado TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fk_usuario INT,
+    FOREIGN KEY (fk_usuario) REFERENCES usuarios(id)
+);

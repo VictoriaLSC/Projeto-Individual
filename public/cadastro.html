@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sem roteiro: Cadastro</title>
+    <title>Maternidade Real: Cadastro</title>
     <link rel="stylesheet" href="./css/home.css">
 </head>
 
@@ -17,8 +17,6 @@
             </div>
             <ul class="menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="quiz.html">Blog</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
                 <li><a class="login" href="login.html">Entrar</a></li>
             </ul>
         </nav>
@@ -29,11 +27,11 @@
             <h1>Cadastro</h1>
             <p>Crie sua conta para acompanhar conteúdos exclusivos sobre maternidade.</p>
 
-            <form id="formCadastro">
+            <div id="formCadastro">
 
                 <div class="form-campo">
                     <label for="nome">Nome:</label>
-                    <input id="nome" type="text" placeholder="Seu nome">
+                    <input id="nome" type="text" placeholder="Nome Completo">
                 </div>
                 <div class="form-campo">
                     <label for="Data de Nascimento">Data de Nascimento:</label>
@@ -54,7 +52,7 @@
                 </div>
 
                 <button onClick="cadastrar()" class="form-botao" type="submit">Cadastrar</button>
-            </form>
+            </div>
         </section>
     </main>
 
@@ -88,7 +86,7 @@
         var senhaVar = senha.value
         var confirmSenhaVar = confirmacao_senha.value
 
-    
+
         if (
             nomeVar == "" ||
             emailVar == "" ||
@@ -98,11 +96,15 @@
         ) {
             alert("Por favor, preencha todos os campos antes de continuar.");
             return false;
-        
-        } 
+
+        }
         // validações
         if (!emailVar.includes("@") || !emailVar.includes(".")) {
             alert("Informe um e-mail válido.");
+            return false;
+        }
+        if (!/[!@#$%^&*(),.?":{}|<>]/.test(senhaVar)) {
+            alert("A senha deve conter pelo menos um caractere especial.");
             return false;
         }
 
@@ -150,7 +152,7 @@
         return false;
     }
 
-    
+
     function listar() {
         fetch("/empresas/listar", {
             method: "GET",

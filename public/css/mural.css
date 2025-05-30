@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tuffy:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root{
+    --fontesec: 'montserrat';
+}
+
+body {
+background-color: #f8f8f8;
+font-family: var(--fontesec);
+color: #555;
+margin: 0;
+padding: 0;
+display: flex;
+min-height: 100vh;
+}
+
+
+.header-left {
+width: 240px;
+/* position: fixed;
+left:0;  */
+background-color: #fff;
+padding: 40px 20px;
+box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+.header-left h1 {
+font-family: 'Playfair Display', serif;
+font-size: 1.8rem;
+color: #333;
+margin-bottom: 10px;
+}
+
+.hello h3 {
+font-weight: 600;
+color: #a78b94;
+font-size: 1rem;
+}
+
+.btn-nav-white a,
+.btn-nav a,
+.btn-logout,
+.btn-nav h3 {
+text-decoration: none;
+font-weight: 600;
+font-size: 1rem;
+color: #fff;
+padding: 10px 15px;
+border-radius: 8px;
+background-color: #a78b94;
+transition: background-color 0.3s ease;
+display: block;
+}
+
+.btn-nav-white a:hover,
+.btn-nav a:hover,
+.btn-logout:hover,
+.btn-nav h3:hover {
+background-color: #a78b94;
+color: white;
+padding: 0.75rem 1.5rem;
+font-size: 1rem;
+font-weight: 600;
+text-decoration: none;
+transition: background-color 0.3s ease;
+}
+
+
+
+.janela{
+width: 100%;
+display: flex;
+}
+
+.dash-right {
+flex: 1;
+padding: 60px 40px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+box-sizing: border-box;
+}
+
+.container {
+/* max-width: 1100px; */
+width: 700px;
+margin: 0 auto;
+padding: 40px;
+box-sizing: border-box;
+background-color: #fffafa;
+border-left: 6px solid #a78b94;
+border-radius: 16px;
+box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+text-align: center;
+}
+
+.container h1 {
+font-family: 'Playfair Display', serif;
+color: #a78b94;
+font-size: 28px;
+margin-bottom: 24px;
+text-align: center;
+font-weight: 600;
+}
+
+.div-form {
+background-color: #ffffff;
+border-radius: 12px;
+padding: 30px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+margin-bottom: 40px;
+}
+
+input, textarea {
+width: 100%;
+padding: 14px;
+border: 1px solid #ccc;
+border-radius: 10px;
+margin-top: 8px;
+margin-bottom: 20px;
+font-size: 15px;
+font-family:var(--fontesec);
+background-color: #fff;
+}
+
+textarea {
+min-height: 120px;
+resize: none;
+}
+
+button {
+background-color: #a78b94;
+color: white;
+padding: 12px 30px;
+border: none;
+border-radius: 30px;
+font-size: 16px;
+font-family:var(--fontesec);
+font-weight: 600;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+button:hover {
+background-color: #8c6d77;
+}
+
+.feed-container {
+display: flex;
+flex-direction: column;
+gap: 24px;
+margin-top: 20px;
+}
+
+.publicacao {
+background-color: #ffffff;
+padding: 20px;
+border-left: 4px solid #a78b94;
+border-radius: 10px;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.publicacao span {
+display: block;
+margin-bottom: 6px;
+font-size: 15px;
+color: #555;
+}
+
+.publicacao-descricao {
+margin-top: 10px;
+font-size: 16px;
+color: #444;
+}
+
+.div-buttons {
+margin-top: 14px;
+}
+
+.publicacao-btn-editar,
+.publicacao-btn-deletar {
+padding: 8px 14px;
+border-radius: 8px;
+font-size: 14px;
+font-family:var(--fontesec);
+font-weight: 600;
+cursor: pointer;
+border: none;
+transition: background-color 0.3s ease;
+}
+
+.publicacao-btn-editar {
+background-color: #f3e7ed;
+color: #a78b94;
+margin-right: 10px;
+}
+
+.publicacao-btn-editar:hover {
+background-color: #e1cfd6;
+}
+
+.publicacao-btn-deletar {
+background-color: #f5dada;
+color: #8c4b4b;
+}
+
+.publicacao-btn-deletar:hover {
+background-color: #e6c1c1;
+}
