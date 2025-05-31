@@ -26,22 +26,19 @@ function perfilMaisComum() {
 }
 
 // GRÁFICOS
-function perfilMaisComumPorFaixa() {
+function faixaEtariaPredominante() {
     var instrucaoSql = `
-        SELECT
-        CASE
-            WHEN TIMESTAMPDIFF(YEAR, u.data_nascimento, CURDATE()) <= 24 THEN 'Até 24 anos'
-            WHEN TIMESTAMPDIFF(YEAR, u.data_nascimento, CURDATE()) BETWEEN 25 AND 34 THEN '25 a 34 anos'
-            WHEN TIMESTAMPDIFF(YEAR, u.data_nascimento, CURDATE()) BETWEEN 35 AND 44 THEN '35 a 44 anos'
-            ELSE '45+ anos'
-        END AS faixa_etaria,
-        p.perfil,
-        COUNT(*) AS quantidade
-        FROM resultado_quiz rq
-        JOIN usuarios u ON rq.fk_usuario = u.idUsuario
-        JOIN perfil p ON rq.fkPerfil = p.idPerfil
-        GROUP BY faixa_etaria, p.perfil
-        ORDER BY faixa_etaria, quantidade DESC;
+    SELECT
+    CASE
+        WHEN TIMESTAMPDIFF(YEAR, u.data_nascimento, CURDATE()) <= 24 THEN 'Até 24 anos'
+        WHEN TIMESTAMPDIFF(YEAR, u.data_nascimento, CURDATE()) BETWEEN 25 AND 34 THEN '25 a 34 anos'
+        WHEN TIMESTAMPDIFF(YEAR, u.data_nascimento, CURDATE()) BETWEEN 35 AND 44 THEN '35 a 44 anos'
+        ELSE '45+ anos'
+    END AS faixa_etaria,
+    COUNT(*) AS quantidade
+    FROM usuarios u
+    GROUP BY faixa_etaria;
+
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -61,7 +58,7 @@ module.exports = {
     contarUsuarios,
     contarRelatos,
     perfilMaisComum,
-    perfilMaisComumPorFaixa,
+    faixaEtariaPredominante,
     quantidadePorPerfil
 
 };

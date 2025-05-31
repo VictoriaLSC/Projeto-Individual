@@ -47,8 +47,8 @@ function perfilMaisComum(req, res) {
         });
     }
 
-function perfilMaisComumPorFaixa(req, res) {
-    dashboardModel.perfilMaisComumPorFaixa()
+function faixaEtariaPredominante(req, res) {    
+    dashboardModel.faixaEtariaPredominante()
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
@@ -66,7 +66,7 @@ function quantidadePorPerfil(req, res) {
     dashboardModel.quantidadePorPerfil()
         .then(function (resultado) {
             if (resultado.length > 0) {
-                res.status(200).json(resultado[0]);
+                res.status(200).json(resultado);
             } else {
                 res.status(204).send("Nenhum perfil encontrado!");
             }
@@ -80,7 +80,7 @@ function quantidadePorPerfil(req, res) {
 module.exports = {
     contarUsuarios,
     contarRelatos,
-    perfilMaisComumPorFaixa,
+    faixaEtariaPredominante,
     perfilMaisComum,
     quantidadePorPerfil
 };

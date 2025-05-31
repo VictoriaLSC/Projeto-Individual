@@ -23,8 +23,8 @@ router.get("/perfilMaisComum", function (req, res) {
 // GRÁFICOS:
 
 // GRÁFICO DE PIZZA - replicar
-router.get("/perfilMaisComumPorFaixa", function (req, res) {
-    dashboardController.perfilMaisComumPorFaixa(req, res);
+router.get("/faixaEtariaPredominante", function (req, res) {
+    dashboardController.faixaEtariaPredominante(req, res);
 });
 
 // GRÁFICO DE BARRA

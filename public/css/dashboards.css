@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@500;600&display=swap');    
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tuffy:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root{
+    --fontesec: 'montserrat';
+}
+
+.janela{
+width: 100%;
+display: flex;
+flex-direction: row;
+}
+
+
+.header-left {
+height: 100%;
+width: 20%;
+background-color: #fff;
+padding: 40px 20px;
+box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+.header-left h1 {
+font-family: 'Playfair Display', serif;
+font-size: 1.8rem;
+color: #333;
+margin-bottom: 10px;
+}
+
+.hello h3 {
+font-weight: 600;
+color: #a78b94;
+font-size: 1rem;
+font-family: var(--fontesec);
+
+}
+
+.btn-nav-white a,
+.btn-nav a,
+.btn-logout,
+.btn-nav h3 {
+text-decoration: none;
+font-weight: 600;
+font-size: 1rem;
+color: #fff;
+padding: 10px 15px;
+border-radius: 8px;
+background-color: #a78b94;
+transition: background-color 0.3s ease;
+display: block;
+font-family: var(--fontesec);
+}
+
+.btn-nav-white a:hover,
+.btn-nav a:hover,
+.btn-logout:hover,
+.btn-nav h3:hover {
+background-color: #a78b94;
+color: white;
+padding: 0.75rem 1.5rem;
+font-size: 1rem;
+font-weight: 600;
+text-decoration: none;
+transition: background-color 0.3s ease;
+}
+
+
+/*-------------------------------------------------------------------------------*/
+
+
+.dash{
+    padding: 0%;
+    background-color: #a78b94;
+    width: 80%;
+}
+
+.dash-right{
+    padding: 0px;
+}
+.graficos {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 30px;
+  color: white;
+}
+
+.grafQuantidade h3,
+.grafErros h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}   
+.graficos {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: nowrap;
+  margin: 30px auto;
+  max-width: 90%;
+}
+
+/* KPIS*/
+.kpis {
+    display: flex;
+    justify-content: center; 
+    gap: 30px;
+    margin: 30px auto; 
+    padding: 10px 0;
+    background-color: #f4edf7;
+    border-radius: 12px;
+    max-width: 90%;
+}
+.kpi {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px 25px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  min-width: 180px;
+  max-width: 250px;
+}
+
+.kpi h2 {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+
+.kpi p {
+  font-size: 20px;
+  color: #7d5a63;
+  font-weight: 700;
+}
+
+.graficobarra{
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.graficoPizza{
+    background-color: #fff;
+    border-radius: 15px;
+}
