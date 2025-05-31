@@ -117,7 +117,6 @@ main {
     margin-left: 10%;
     margin-right: 10%;
     line-height: 1.5;
-    /* Define o espaçamento como 1.5 vezes o tamanho da fonte */
 }
 
 
@@ -410,12 +409,13 @@ main {
 }
 
 
-/* Rodapé */
+/* Footer */
 footer {
     background-color: #fff;
     padding: 20px 0;
     text-align: center;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+
 }
 
 .footer-container {

@@ -141,9 +141,11 @@ transition: background-color 0.3s ease;
 .graficobarra{
     background-color: #fff;
     border-radius: 15px;
+    width: 500px;
 }
 
 .graficoPizza{
     background-color: #fff;
     border-radius: 15px;
+    width:300px;
 }

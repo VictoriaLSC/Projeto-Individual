@@ -7,6 +7,8 @@
     <title>Maternidade Real: Login</title>
     <meta name="description" content="Explore o mundo da maternidade real">
     <link rel="stylesheet" href="./css/home.css">
+    <link rel="shortcut icon" href="../assets/imgs/favicon-16x16.png" type="image/x-icon">
+
 </head>
 
 <body>
@@ -14,14 +16,10 @@
         <nav>
 
             <div class="logo">
-
                 <span>Maternidade Real </span>
             </div>
-
             <ul class="menu">
-                <li><a href="./index.html">Home</a></li>
-
-                <li><a class="login" href="./login.html">Entrar</a></li>
+                <li><a class="home" href="./index.html">Home</a></li>
             </ul>
         </nav>
 
@@ -105,9 +103,15 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.idUsuario;
+
                     setTimeout(function () {
-                        window.location = "dashboard/mural.html";
-                    }, 1000); // apenas para exibir o loading
+                        if (sessionStorage.DESTINO_POS_LOGIN) {
+                            window.location = sessionStorage.DESTINO_POS_LOGIN;
+                            sessionStorage.removeItem("DESTINO_POS_LOGIN");
+                        } else {
+                            window.location = "index.html"; 
+                        }
+                    }, 1000); 
 
                 });
 

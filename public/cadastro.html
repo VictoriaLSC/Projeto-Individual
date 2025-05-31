@@ -10,9 +10,9 @@
 
 <body>
     <header>
+
         <nav>
             <div class="logo">
-
                 <span> Maternidade Real </span>
             </div>
             <ul class="menu">
@@ -20,13 +20,16 @@
                 <li><a class="login" href="login.html">Entrar</a></li>
             </ul>
         </nav>
+
     </header>
 
     <main>
+
         <section class="cadastro-container">
             <h1>Cadastro</h1>
             <p>Crie sua conta para acompanhar conteúdos exclusivos sobre maternidade.</p>
-
+            
+            
             <div id="formCadastro">
 
                 <div class="form-campo">
@@ -65,9 +68,6 @@
             <div class="footer-links">
                 <ul>
                     <li><a href="/home">Home</a></li>
-                    <li><a href="/sobre-mim">Sobre Mim</a></li>
-                    <li><a href="/Quiz">Blog</a></li>
-                    <li><a href="/contato">Contato</a></li>
                 </ul>
             </div>
         </div>
@@ -117,15 +117,14 @@
         }
 
 
-        // Enviando o valor da nova input
+       
         fetch("/usuarios/cadastrar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
+                
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,

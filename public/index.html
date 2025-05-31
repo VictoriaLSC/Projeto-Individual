@@ -8,6 +8,8 @@
     <meta name="description" content="Explore o mundo da maternidade real">
     <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="shortcut icon" href="../assets/imgs/favicon-16x16.png" type="image/x-icon">
+
 </head>
 
 <body>
@@ -17,10 +19,10 @@
                 <span>Maternidade Real</span>
             </div>
             <ul class="menu">
-                <li><a> Home</a></li>
-
                 <li><a class="login" href="./login.html">Entrar</a></li>
-                <li><a class="Quizz" onClick="verificarLogin()">Quizz</a></li>
+                <li><a class="Quizz" onClick="verificarLogin()">Relatos</a></li>
+                <li><a href="#" onclick="logout()">Sair</a></li>
+
                 <!-- quando o usuario loga, armazena a sessionStorage do email e do id dele. Se não tiver nenhuma sessionStorage, significa que o usuário  não tá logado, portanto, não vai pro quiz -->
             </ul>
         </nav>
@@ -51,7 +53,7 @@
             <h1>
                 Bem-vinda à maternidade real</h1>
             <p>
-                Ao longo dessa caminhada, recebi conselhos — alguns bons, outros nem tanto — mas todos me ajudaram de
+                Ao longo dessa caminhada, recebi conselhos, alguns bons e outros nem tanto, mas todos me ajudaram de
                 alguma forma. E foi por isso que decidi criar o projeto “Maternidade Real”. Um espaço para eu
                 compartilhar experiências reais, sem filtros, sem romantização. Um lugar para outras mães se
                 reconhecerem, se apoiarem e, principalmente, não se sentirem sozinhas. Porque ser mãe não é um roteiro
@@ -143,7 +145,7 @@
             <div class="quiz-chamada-container">
                 <h2>Descubra seu estilo de maternidade</h2>
                 <p>Responda algumas perguntas e descubra qual perfil de mãe mais te representa.</p>
-                <a href="interacao.html" class="btn-iniciar-quiz">Fazer o Quiz</a>
+                <a href="#" onclick="verificarLoginQuiz()" class="btn-iniciar-quiz">Fazer o Quiz</a>
             </div>
         </section>
         <section class="home">
@@ -154,7 +156,7 @@
                     <p>
                         Olá! Meu nome é Victória, tenho 28 anos e sou mãe do Theo, um garotinho de 5 anos que
                         transformou
-                        completamente a minha vida. Quando o Theo chegou, eu descobri o verdadeiro significado do amor —
+                        completamente a minha vida. Quando o Theo chegou, eu descobri o verdadeiro significado do amor,
                         um
                         amor tão intenso, que só quem vive consegue compreender.
                     </p>
@@ -170,10 +172,7 @@
                     <p>Feito com muito ❤️ </p>
                 </div>
                 <div class="footer-links">
-                    <ul>
-                        <li>Home</a></li>
-                      
-                    </ul>
+
                 </div>
             </div>
         </div>
@@ -208,11 +207,23 @@
 </html>
 
 <script>
-    function verificarLogin(){
-        if(sessionStorage.EMAIL_USUARIO == undefined){
+    function verificarLogin() {
+        if (sessionStorage.EMAIL_USUARIO == undefined) {
             window.location = "login.html"
-        } else{
-            window.location = "interacao.html"
+        } else {
+            window.location = "dashboard/mural.html"
+        }
+    }
+    function logout() {
+        sessionStorage.clear();
+        window.location.href = "login.html";
+    }
+    function verificarLoginQuiz() {
+        if (!sessionStorage.EMAIL_USUARIO) {
+            sessionStorage.DESTINO_POS_LOGIN = "interacao.html";
+            window.location.href = "login.html";
+        } else {
+            window.location.href = "interacao.html";
         }
     }
 </script>

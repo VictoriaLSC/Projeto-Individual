@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Que tipo de mãe você é?</title>
     <link rel="stylesheet" href="./css/home.css">
+    <link rel="shortcut icon" href="../assets/imgs/favicon-16x16.png" type="image/x-icon">
+
 </head>
 
 
@@ -17,9 +19,11 @@
             </div>
             <ul class="menu">
                 <li><a class="home" href="./index.html">Home</a></li>
-
-                <li><a class="login" href="./login.html">Entrar</a></li>
+                <li><a class="Quizz" href="./dashboard/mural.html"   onClick="verificarLogin()">Relatos</a></li>
+                <li><a href="#" onclick="logout()">Sair</a></li>
             </ul>
+      
+      
         </nav>
     </header>
     <main class="principal">
@@ -29,15 +33,12 @@
             <button id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
 
             <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
-                <!-- <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
-                <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas"></span></span>
-                <span class="width-fit-content">Quantidade de erros: <span id="spanErradas"></span></span>
-            </div> -->
+               
                 <div id="pontuacaoFinalJogo" class="flex-colunar padding-8">
-                    <span id="pontuacaoFinal" class="width-fit-content">Pontuação Final:
-                        <span id="spanPontuacaoFinal">***</span>
-                    </span>
-                    <span id="msgFinal" class="width-fit-content">***</span>
+                    <!-- <span id="pontuacaoFinal" class="width-fit-content">Pontuação Final: -->
+                        <!-- <span id="spanPontuacaoFinal">***</span>
+                    </span> -->
+                    <span id="msgFinal" class="width-fit-content"></span>
                 </div>
             </div>
 
@@ -93,10 +94,10 @@
                     <p>Feito com muito ❤️</p>
                 </div>
                 <div class="footer-links">
-                    <ul>
+                    <!-- <ul>
                         <li><a href="index.html">Home</a></li>
 
-                    </ul>
+                    </ul> -->
                 </div>
             </div>
         </div>
@@ -371,5 +372,8 @@
 
     }
 
-
+function logout() {
+        sessionStorage.clear();
+        window.location.href = "login.html"; 
+    }
 </script>
