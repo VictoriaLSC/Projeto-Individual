@@ -27,4 +27,9 @@ router.delete("/deletar/:id", function (req, res) {
     avisoController.deletar(req, res);
 });
 
+router.get("/buscar/:idRelato", function (req, res) {
+    avisoController.buscarPorId(req, res);
+});
+
+
 module.exports = router;

@@ -6,30 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maternidade Real | Dashboards</title>
-
-
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="shortcut icon" href="../assets/imgs/favicon-16x16.png" type="image/x-icon">
 
     <script src="../js/sessao.js"></script>
     <script src="./../js/alerta.js"></script>
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-
     <!-- scripts do Chart.js - 2022-1 -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!--FONT AWESOME-->
-    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
 </head>
 
 <!-- <body onload=" atualizarFeed()"> -->
 
 <body
-    onload=" buscarContarUsuarios(); buscarContarRelatos(); buscarPerfil(); buscarQuantidade(); buscarProporcaoPerfil()">
+    onload=" buscarContarUsuarios(); buscarContarRelatos(); buscarPerfil(); buscarQuantidade(); buscarProporcaoPerfil(); buscarTotalQuiz()">
 
     <div class="janela">
         <div class="header-left">
@@ -37,6 +27,12 @@
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="../interacao.html">
+                    <h3>Qual é o seu perfil de mãe?</h3>
+                </a>
             </div>
 
 
@@ -80,32 +76,36 @@
                         <h2>Perfil de mãe predominante</h2>
                         <p id="inpPerfilComum"></p>
                     </div>
+                    <div class="kpi">
+                        <h2>Quizzes Respondidos</h2>
+                        <p id="inpTotalQuiz"></p>
+                    </div>
                 </div>
             </div>
-        
 
 
-        <div class="dash-right">
-            <!-- Título para o gráfico de linhas -->
-            <div class="graficos">
-                <div class="grafQuantidade">
-                    <h3>Quantidade de perfis de mãe </h3>
-                    <!-- Elemento canvas onde o gráfico de barra será desenhado -->
-                    <canvas id="barra" class="graficobarra"></canvas>
-                </div>
 
-                <!-- Segundo gráfico : pizza -->
-                <div class="graficos2">
-                    <div class="grafFaixa">
-                        <h3>Faixa etária predominante</h3>
-                        <canvas id="pizza" class="graficoPizza"></canvas>
+            <div class="dash-right">
+                <!-- Título para o gráfico de linhas -->
+                <div class="graficos">
+                    <div class="grafQuantidade">
+                        <h3>Quantidade de perfis de mãe </h3>
+                        <!-- Elemento canvas onde o gráfico de barra será desenhado -->
+                        <canvas id="barra" class="graficobarra"></canvas>
                     </div>
 
+                    <!-- Segundo gráfico : pizza -->
+                    <div class="graficos2">
+                        <div class="grafFaixa">
+                            <h3>Faixa etária predominante</h3>
+                            <canvas id="pizza" class="graficoPizza"></canvas>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </div>
+        </div>
 
     </div>
 
@@ -291,6 +291,28 @@
         console.log('cheguei');
         inpTotalUsuarios.innerHTML = totalUsuariosKpi;
     }
+    // KPI - QUIZZES RESPONDIDOS
+    function buscarTotalQuiz() {
+        fetch("http://localhost:3333/dashboard/totalQuiz")
+          .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                inserirTotalQuiz(data);
+            })
+            .catch(function (err) {
+                console.log(err);
+            })
+           
+    }
+    function inserirTotalQuiz(dados){
+        var totalQuizKpi = dados[0].total;
+        console.log('cheguei');
+        inpTotalQuiz.innerHTML = totalQuizKpi;
+
+
+    }
+
     //------------------------------------------------------------------------------------------------------------------------//
 
 

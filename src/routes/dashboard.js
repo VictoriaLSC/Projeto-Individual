@@ -5,7 +5,10 @@ var dashboardController = require("../controllers/dashboardController");
 
 //KPI:
 
-
+// - TOTAL DE QUIzZES FEITOS
+router.get("/totalQuiz", function (req, res) {
+    dashboardController.totalQuiz(req, res);
+});
 //KPI - TOTAL DE USUÁRIOS CADASTRADOS
 router.get("/contarUsuarios", function (req, res) {
     dashboardController.contarUsuarios(req, res);

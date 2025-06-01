@@ -19,11 +19,11 @@
             </div>
             <ul class="menu">
                 <li><a class="home" href="./index.html">Home</a></li>
-                <li><a class="Quizz" href="./dashboard/mural.html"   onClick="verificarLogin()">Relatos</a></li>
+                <li><a class="Quizz" href="./dashboard/mural.html" onClick="verificarLogin()">Relatos</a></li>
                 <li><a href="#" onclick="logout()">Sair</a></li>
             </ul>
-      
-      
+
+
         </nav>
     </header>
     <main class="principal">
@@ -33,11 +33,9 @@
             <button id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
 
             <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
-               
+
                 <div id="pontuacaoFinalJogo" class="flex-colunar padding-8">
-                    <!-- <span id="pontuacaoFinal" class="width-fit-content">Pontuação Final: -->
-                        <!-- <span id="spanPontuacaoFinal">***</span>
-                    </span> -->
+
                     <span id="msgFinal" class="width-fit-content"></span>
                 </div>
             </div>
@@ -79,7 +77,6 @@
                 <div id="botoes" class="flex-colunar padding-8">
                     <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
                     <button onclick="avancar()" id="btnProx" disabled>Avançar para próxima questão</button>
-                    <!-- <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button> -->
                     <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Tentar novamente</button>
                 </div>
             </div>
@@ -94,10 +91,7 @@
                     <p>Feito com muito ❤️</p>
                 </div>
                 <div class="footer-links">
-                    <!-- <ul>
-                        <li><a href="index.html">Home</a></li>
 
-                    </ul> -->
                 </div>
             </div>
         </div>
@@ -107,7 +101,7 @@
 
 </html>
 <script>
-    if(sessionStorage.EMAIL_USUARIO == ""){
+    if (sessionStorage.EMAIL_USUARIO == "") {
         window.location = "index.html"
     }
 
@@ -178,7 +172,7 @@
     let pontuacaoFinal = 0
     let tentativaIncorreta = 0
     let quantidadeDeQuestoes = listaDeQuestoes.length
-    
+
 
     function onloadEsconder() {
         document.getElementById('pontuacao').style.display = "none"
@@ -356,7 +350,7 @@
             },
             body: JSON.stringify({
                 tipoPerfil: indiceFkPerfil,
-                idUsuario : id
+                idUsuario: id
             })
         })
             .then(res => {
@@ -372,8 +366,8 @@
 
     }
 
-function logout() {
+    function logout() {
         sessionStorage.clear();
-        window.location.href = "login.html"; 
+        window.location.href = "login.html";
     }
 </script>

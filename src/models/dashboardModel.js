@@ -24,6 +24,13 @@ function perfilMaisComum() {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
+function totalQuiz() {
+    var instrucaoSql = `
+    SELECT COUNT(*) AS total 
+    FROM resultado_quiz;`;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
 // GRÁFICOS
 function faixaEtariaPredominante() {
@@ -59,6 +66,7 @@ module.exports = {
     contarRelatos,
     perfilMaisComum,
     faixaEtariaPredominante,
-    quantidadePorPerfil
+    quantidadePorPerfil,
+    totalQuiz
 
 };

@@ -89,11 +89,20 @@ function deletar(idRelato) {
     return database.executar(instrucaoSql);
 }
 
+function buscarPorId(idRelato) {
+    var instrucaoSql = `
+        SELECT descricao FROM relato WHERE id = ${idRelato};
+    `;
+    console.log("Executando SQL buscarPorId:", instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 module.exports = {
     listar,
     listarPorUsuario,
     pesquisarDescricao,
     publicar,
     editar,
-    deletar
+    deletar,
+    buscarPorId
+ 
 }

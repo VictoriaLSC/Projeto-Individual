@@ -97,7 +97,7 @@ function editar(req, res) {
     var novaDescricao = req.body.descricao;
     var idRelato = req.params.id;
 
-    avisoModel.editar(novaDescricao, id)
+    avisoModel.editar(novaDescricao, idRelato)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -130,12 +130,29 @@ function deletar(req, res) {
             }
         );
 }
+function buscarPorId(req, res) {
+    var idRelato = req.params.idRelato;
 
+    avisoModel.buscarPorId(idRelato)
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado[0]); 
+            } else {
+                res.status(404).send("Relato não encontrado!");
+            }
+        })
+        .catch(function (erro) {
+            console.log(erro);
+            console.log("Erro ao buscar relato por ID: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        });
+}
 module.exports = {
     listar,
     listarPorUsuario,
     pesquisarDescricao,
     publicar,
     editar,
-    deletar
+    deletar,
+    buscarPorId
 }
