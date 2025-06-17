@@ -6,7 +6,7 @@ function cadastrarPerfil(id, fk) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dad
     var instrucaoSql =
-        `INSERT INTO resultado_quiz (fkPerfil, data_resultado, fksuario) VALUES
+        `INSERT INTO resultado_quiz (fkPerfil, data_resultado, fk_usuario) VALUES
         (${fk}, DEFAULT, ${id})`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);

@@ -43,10 +43,7 @@
                 </a>
             </div>
 
-            <!-- <div class="btn-nav">
-                <h3>Mural de relatos</h3>
-            </div> -->
-
+          
             <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
             </div>
@@ -228,6 +225,7 @@
                         divPublicacao.appendChild(spanTitulo);
                         divPublicacao.appendChild(divDescricao);
                         divPublicacao.appendChild(divButtons);
+                        
                         if (Number(publicacao.fk_usuario) == Number(sessionStorage.ID_USUARIO)) {
 
                             divButtons.appendChild(btnEditar);

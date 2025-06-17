@@ -408,6 +408,10 @@ main {
 
 }
 
+.Quizz{
+    cursor: pointer;
+}
+
 
 /* Footer */
 footer {
